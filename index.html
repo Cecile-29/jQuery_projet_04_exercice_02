@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="fr">
+
+<head>
+  <title>jQuery_projet_04_exercice_02</title>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container-fluid bg-primary row justify-content-center p-3">
+    <h1 class="col-12 p-4 text-center text-warning">jQuery_projet_04_exercice_02</h1>
+    <h2 class="col-9 p-4 text-center text-light">Créer une fonction qui calcule la moyenne de cinq note sur 20.</h2>
+    <div class="offset-1 col-10 row justify-content-center">
+      <div class="row bg-warning rounded p-2 m-2">
+        <div class="offset-1 col-10 row justify-content-center bg-secondary rounded m-4">
+          <h5 class="col-12 p-4 text-center text-light">Entrez dans les cinq champs une note sur 20, en chiffre, en cliquant le bouton vous aurez la moyenne des cinq notes!</h5>
+          <input class="col-1 btn btn-outline-info rounded m-4 text-warning p-3 m-3" type="text" value="" id="1" />
+          <input class="col-1 btn btn-outline-info rounded m-4 text-warning p-3 m-3" type="text" value="" id="2" />
+          <input class="col-1 btn btn-outline-info rounded m-4 text-warning p-3 m-3" type="text" value="" id="3" />
+          <input class="col-1 btn btn-outline-info rounded m-4 text-warning p-3 m-3" type="text" value="" id="4" />
+          <input class="col-1 btn btn-outline-info rounded m-4 text-warning p-3 m-3" type="text" value="" id="5" />
+          <button class="btn btn-outline-light p-3 m-3" id="average" name="button" type="button">CALCULEZ LA MOYENNE !</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.js">
+  </script>
+  <script>
+    $(function() {
+      $('#average').click(function() {
+        let note1 = parseInt($('#1').val());
+        let note2 = parseInt($('#2').val());
+        let note3 = parseInt($('#3').val());
+        let note4 = parseInt($('#4').val());
+        let note5 = parseInt($('#5').val());
+        let moyenne = ((note1 + note2 + note3 + note4 + note5) / 5);
+        if (isNaN(moyenne)) {
+          alert('Veuillez rentrer une note avec deux chiffres, compris entre 0 et 20 dans chaque input !');
+        } else if ((moyenne > 20) || (moyenne < 0)) {
+          alert('Veuillez rentrer une note avec deux chiffres, compris entre 0 et 20 dans chaque input !');
+        } else {
+          alert('Cette note : ' + moyenne + ' est la moyenne des cinq !');
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
